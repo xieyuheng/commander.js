@@ -1,4 +1,4 @@
-import { Command } from "./Command.ts"
+import { type Command } from "./Command.ts"
 
 export type Commander = {
   name: string
@@ -7,7 +7,19 @@ export type Commander = {
   run(): void
 }
 
-export function createCommander(): Commander {}
+export function createCommander(name: string): Commander {
+  const commands: Array<Command> = []
+
+  function run() {
+    return
+  }
+
+  return {
+    name,
+    commands,
+    run,
+  }
+}
 
 // function main() {
 //   const commander = createCommander(name)
