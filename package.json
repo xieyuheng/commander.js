@@ -1,0 +1,28 @@
+{
+  "name": "@xieyuheng/commander",
+  "version": "0.1.0",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "repository": "github:xieyuheng/commander",
+  "main": "lib/index.js",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "format": "prettier src --write"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1",
+    "yargs-parser": "^22.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "@types/yargs-parser": "^21.0.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "typescript": "^5.8.3"
+  }
+}
