@@ -42,5 +42,8 @@ export class Commander {
       this.prepare(yargsParser(this.argv.slice(1)))
       return this.defaultCommand.run(this)
     }
+
+    console.error(`unknown command: ${commandName}`)
+    process.exit(1)
   }
 }
