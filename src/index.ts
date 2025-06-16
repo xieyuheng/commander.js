@@ -1,2 +1,1 @@
-export * from "./Command.ts"
-export * from "./Commander.ts"
+export * from "./commander/index.ts"
