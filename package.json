@@ -20,11 +20,11 @@
     "format": "prettier src --write"
   },
   "dependencies": {
-    "yargs-parser": "^22.0.0"
+    "yargs-parser": "^22.0.0",
+    "@types/yargs-parser": "^21.0.3"
   },
   "devDependencies": {
     "@types/node": "^24.0.1",
-    "@types/yargs-parser": "^21.0.3",
     "prettier": "^3.5.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "^5.8.3"
