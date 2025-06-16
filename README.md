@@ -1,11 +1,11 @@
-# Commander
+# Commander.js
 
 A simple library for building CLI with sub-commands in Node.js.
 
 ## Install
 
 ```sh
-npm install @xieyuheng/commander
+npm install @xieyuheng/commander.js
 ```
 
 ## Usage
