@@ -11,6 +11,6 @@ export const exampleCommand: Command = {
     console.log(commander.name)
     console.log(this.name)
     console.log(commander.args)
-    console.log(commander.opts)
+    console.log(commander.options)
   },
 }

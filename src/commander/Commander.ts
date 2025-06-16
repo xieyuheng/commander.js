@@ -6,7 +6,7 @@ export class Commander {
   commands: Array<Command> = []
   defaultCommand?: Command
   args: Array<string | number | boolean> = []
-  opts: Record<string, any> = {}
+  options: Record<string, any> = {}
 
   constructor(public argv: Array<string>) {}
 
@@ -24,8 +24,8 @@ export class Commander {
 
   prepare(argv: yargsParser.Arguments): void {
     this.args = argv._.slice(1)
-    this.opts = { ...argv }
-    delete this.opts["_"]
+    this.options = { ...argv }
+    delete this.options["_"]
   }
 
   async run(): Promise<void> {
