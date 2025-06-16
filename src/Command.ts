@@ -1,3 +1,3 @@
-export type Command = {
+export class Command {
   //
 }
