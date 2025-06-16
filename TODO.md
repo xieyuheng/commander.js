@@ -1,2 +1,0 @@
-exampleCommand.help
-exampleCommand.run

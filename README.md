@@ -1,6 +1,6 @@
-# commander
+# Commander
 
-Tools for building command-line interface in nodejs.
+A simple library for building CLI with sub-commands in Node.js.
 
 ## Install
 

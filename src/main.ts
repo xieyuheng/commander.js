@@ -1,13 +1,3 @@
-import { exampleCommand } from "./commands/index.ts"
-import { Commander } from "./index.ts"
+import { commander } from "./example-commander.ts"
 
-async function main() {
-  const commander = new Commander(process.argv)
-
-  commander.use(exampleCommand)
-  // commander.default(exampleCommand)
-
-  await commander.run()
-}
-
-main()
+commander.run(process.argv)

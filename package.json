@@ -15,10 +15,11 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
     "format": "prettier src --write"
   },
   "dependencies": {
-    "picocolors": "^1.1.1",
     "yargs-parser": "^22.0.0"
   },
   "devDependencies": {

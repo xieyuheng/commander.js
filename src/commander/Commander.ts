@@ -1,18 +1,14 @@
 import Path from "path"
 import yargsParser from "yargs-parser"
+import { helpCommand } from "../commands/index.ts"
 import { type Command } from "./Command.ts"
 
 export class Commander {
-  commands: Array<Command> = []
-  defaultCommand?: Command
+  name?: string
+  commands: Array<Command> = [helpCommand]
+  defaultCommand: Command = helpCommand
   args: Array<string | number | boolean> = []
   options: Record<string, any> = {}
-
-  constructor(public argv: Array<string>) {}
-
-  get name(): string {
-    return Path.basename(this.argv[1])
-  }
 
   use(command: Command): void {
     this.commands.push(command)
@@ -22,28 +18,42 @@ export class Commander {
     this.defaultCommand = command
   }
 
-  prepare(argv: yargsParser.Arguments): void {
-    this.args = argv._.slice(1)
-    this.options = { ...argv }
+  prepare(parsedArgv: yargsParser.Arguments): void {
+    this.args = parsedArgv._.slice(1)
+    this.options = { ...parsedArgv }
     delete this.options["_"]
   }
 
-  async run(): Promise<void> {
-    const commandName = this.argv[2]
+  listCommands(): void {
+    console.log(`commands:`)
+    for (const command of this.commands) {
+      console.log(`  ${command.name} -- ${command.description}`)
+    }
+
+    console.log()
+
+    if (this.defaultCommand) {
+      console.log(`default command: ${this.defaultCommand.name}`)
+    }
+  }
+
+  async run(argv: Array<string>): Promise<void> {
+    this.name = Path.basename(argv[1])
+
+    const commandName = argv[2]
 
     for (const command of this.commands) {
       if (command.name === commandName) {
-        this.prepare(yargsParser(this.argv.slice(2)))
+        this.prepare(yargsParser(argv.slice(2)))
         return command.run(this)
       }
     }
 
     if (this.defaultCommand) {
-      this.prepare(yargsParser(this.argv.slice(1)))
+      this.prepare(yargsParser(argv.slice(1)))
       return this.defaultCommand.run(this)
     }
 
     console.error(`unknown command: ${commandName}`)
-    process.exit(1)
   }
 }
