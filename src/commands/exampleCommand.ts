@@ -7,7 +7,10 @@ export const exampleCommand: Command = {
     return "TODO"
   },
 
-  async run() {
-    //
+  async run(commander) {
+    console.log(commander.name)
+    console.log(this.name)
+    console.log(commander.args)
+    console.log(commander.opts)
   },
 }
