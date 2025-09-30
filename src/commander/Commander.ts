@@ -29,12 +29,6 @@ export class Commander {
     for (const command of this.commands) {
       console.log(`  ${command.name} -- ${command.description}`)
     }
-
-    console.log()
-
-    if (this.defaultCommand) {
-      console.log(`default command: ${this.defaultCommand.name}`)
-    }
   }
 
   async run(argv: Array<string>): Promise<void> {
