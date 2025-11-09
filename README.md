@@ -2,12 +2,6 @@
 
 A simple library for building CLI with sub-commands in Node.js.
 
-## Install
-
-```sh
-npm install @xieyuheng/commander.js
-```
-
 ## Usage
 
 ```typescript
@@ -39,14 +33,6 @@ async function main() {
 }
 
 main()
-```
-
-## Development
-
-```sh
-npm install     # Install dependencies
-npm run build   # Compile `src/` to `lib/`
-npm run test    # Run test
 ```
 
 ## License
