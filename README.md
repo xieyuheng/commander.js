@@ -1,4 +1,4 @@
-# Commander.js
+# commander.js
 
 A library for building CLI with sub-commands in Node.js.
 
