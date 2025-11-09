@@ -1,11 +1,11 @@
 # Commander.js
 
-A simple library for building CLI with sub-commands in Node.js.
+A library for building CLI with sub-commands in Node.js.
 
 ## Usage
 
 ```typescript
-import { Commander, type Command } from "@xieyuheng/commander"
+import { Commander, type Command } from "@xieyuheng/commander.js"
 
 export const addCommand: Command = {
   name: "add",
